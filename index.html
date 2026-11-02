@@ -1,57 +1,150 @@
-html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Professional Landing Page</title>
-    <script src="https://tailwindcss.com"></script>
+    <title>Wisdom Dental</title>
+    <style>
+        /* CSS Variables for easy color customization */
+        :root {
+            --bg-color: #f3f4f6; /* Background color */
+            --text-color: #1f2937; /* Main text color */
+            --button-bg: #ffffff; /* Button background */
+            --button-text: #1f2937; /* Button text */
+            --button-hover-bg: #e5e7eb; /* Button hover background */
+            --button-border: #d1d5db; /* Button border */
+            --button-shadow: rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 680px; /* Standard Linktree max width */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Profile Section */
+        .profile-img {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 16px;
+            /* Optional: adds a subtle ring around the logo */
+            border: 2px solid #fff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .profile-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .profile-bio {
+            font-size: 15px;
+            font-weight: 400;
+            margin-bottom: 32px;
+            color: #4b5563;
+        }
+
+        /* Links Section */
+        .links-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px; /* Space between buttons */
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 18px 24px;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            border: 1px solid var(--button-border);
+            border-radius: 8px; /* Change to 30px for pill-shaped buttons */
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 2px 8px var(--button-shadow);
+        }
+
+        .link-btn:hover {
+            background-color: var(--button-hover-bg);
+            transform: scale(1.02); /* Slight zoom effect on hover */
+        }
+
+        /* Social Icons Section (Optional bottom row) */
+        .social-container {
+            margin-top: 40px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            fill: var(--text-color);
+            transition: transform 0.2s ease;
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body>
 
-    <!-- Navigation -->
-    <nav class="flex items-center justify-between p-6 max-w-6xl mx-auto">
-        <div class="text-xl font-bold tracking-tight text-indigo-600">BrandName</div>
-        <a href="#cta" class="bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-indigo-700 transition">Get Started</a>
-    </nav>
+    <div class="container">
+        <!-- 1. Replace with your actual logo URL -->
+        <img src="https://via.placeholder.com/150" alt="Wisdom Dental Logo" class="profile-img">
+        
+        <!-- 2. Profile Name and Bio -->
+        <h1 class="profile-title">@wisdomdental</h1>
+        <p class="profile-bio">Smile with confidence! Serving the community with gentle dental care.</p>
+        
+        <!-- 3. Your Links -->
+        <div class="links-container">
+            <a href="https://yourwebsite.com/book" class="link-btn" target="_blank" rel="noopener noreferrer">
+                Book an Appointment
+            </a>
+            <a href="https://yourwebsite.com/services" class="link-btn" target="_blank" rel="noopener noreferrer">
+                Our Services
+            </a>
+            <a href="https://yourwebsite.com/contact" class="link-btn" target="_blank" rel="noopener noreferrer">
+                Contact Us / Location
+            </a>
+            <a href="https://yourwebsite.com/promotions" class="link-btn" target="_blank" rel="noopener noreferrer">
+                New Patient Specials
+            </a>
+        </div>
 
-    <!-- Hero Section -->
-    <header class="max-w-4xl mx-auto text-center py-20 px-6">
-        <h1 class="text-5xl font-extrabold tracking-tight text-gray-900 sm:text-6xl">
-            Build something incredible on <span class="text-indigo-600">GitHub.io</span>
-        </h1>
-        <p class="mt-6 text-lg leading-8 text-gray-600 max-w-2xl mx-auto">
-            A beautiful, blindingly fast landing page deployed directly through your code repositories. Ready to showcase your product, app, or portfolio.
-        </p>
-        <div class="mt-10 flex items-center justify-center gap-x-6" id="cta">
-            <a href="#" class="bg-indigo-600 text-white px-6 py-3 rounded-xl text-lg font-semibold shadow-md hover:bg-indigo-700 transition">Explore Features</a>
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900 hover:text-indigo-600 transition">Learn more <span aria-hidden="true">→</span></a>
-        </div>
-    </header>
-
-    <!-- Features Grid -->
-    <section class="max-w-6xl mx-auto py-16 px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-            <div class="text-indigo-600 text-2xl mb-3">⚡</div>
-            <h3 class="text-xl font-bold mb-2">Blazing Fast</h3>
-            <p class="text-gray-600">Static site architecture served directly over global CDNs.</p>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-            <div class="text-indigo-600 text-2xl mb-3">🔒</div>
-            <h3 class="text-xl font-bold mb-2">SSL Secured</h3>
-            <p class="text-gray-600">Automatic HTTPS configuration ensures maximum visitor safety.</p>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-            <div class="text-indigo-600 text-2xl mb-3">🎨</div>
-            <h3 class="text-xl font-bold mb-2">Tailwind Styling</h3>
-            <p class="text-gray-600">Easily change looks or swap layouts using functional utility classes.</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="text-center py-10 text-gray-400 text-sm border-t border-gray-100 mt-12">
-        <p>© 2026 BrandName. Hosted entirely on GitHub Pages.</p>
-    </footer>
+    </div>
 
 </body>
 </html>
