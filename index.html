@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wisdom Dental</title>
+    <!-- Added Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* CSS Variables for easy color customization */
         :root {
             --bg-color: #f3f4f6; /* Background color */
-            --text-color: #1f2937; /* Main text color */
-            --button-bg: #ffffff; /* Button background */
-            --button-text: #1f2937; /* Button text */
+            --text-color: #ffffff; /* Main text color */
+            --button-bg: #f9fff5; /* Button background */
+            --button-text: #000000; /* Button text */
             --button-hover-bg: #e5e7eb; /* Button hover background */
             --button-border: #d1d5db; /* Button border */
-            --button-shadow: rgba(0, 0, 0, 0.05);
+            --button-shadow: rgba(0, 0, 0, 100);
         }
 
         * {
@@ -24,7 +26,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
+            background: linear-gradient(to bottom, #878787, #800020);
             color: var(--text-color);
             display: flex;
             justify-content: center;
@@ -48,23 +50,24 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 16px;
-            /* Optional: adds a subtle ring around the logo */
             border: 2px solid #fff;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,100);
         }
 
         .profile-title {
-            font-size: 20px;
+            font-size: 30px;
             font-weight: 700;
             margin-bottom: 8px;
             letter-spacing: -0.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 100);
         }
 
         .profile-bio {
-            font-size: 15px;
-            font-weight: 400;
+            font-size: 20px;
+            font-weight: 700;
             margin-bottom: 32px;
-            color: #4b5563;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 100);
         }
 
         /* Links Section */
@@ -72,32 +75,42 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 16px; /* Space between buttons */
+            gap: 20px; /* Space between buttons */
         }
 
         .link-btn {
+            position: relative; /* Added to constrain absolute child */
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding: 18px 24px;
+            padding: 25px 45px; /* Slightly increased side padding so text doesn't hit the icon */
             background-color: var(--button-bg);
             color: var(--button-text);
             text-decoration: none;
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 19px;
+            font-weight: 700;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
             border: 1px solid var(--button-border);
-            border-radius: 8px; /* Change to 30px for pill-shaped buttons */
+            border-radius: 15px;
             transition: all 0.2s ease-in-out;
-            box-shadow: 0 2px 8px var(--button-shadow);
+            box-shadow: 0 2px 15px var(--button-shadow);
         }
 
         .link-btn:hover {
             background-color: var(--button-hover-bg);
-            transform: scale(1.02); /* Slight zoom effect on hover */
+            transform: scale(1.03);
         }
 
-        /* Social Icons Section (Optional bottom row) */
+        /* New Icon Class */
+        .link-icon {
+            position: absolute;
+            left: 50px; /* Distance from the left edge */
+            font-size: 35px; /* Icon size */
+            color: var(--button-text);
+        }
+
+        /* Social Icons Section */
         .social-container {
             margin-top: 40px;
             display: flex;
@@ -125,25 +138,53 @@
         <img src="https://via.placeholder.com/150" alt="Wisdom Dental Logo" class="profile-img">
         
         <!-- 2. Profile Name and Bio -->
-        <h1 class="profile-title">@wisdomdental</h1>
-        <p class="profile-bio">Smile with confidence! Serving the community with gentle dental care.</p>
+        <h1 class="profile-title">WISDOM DENTAL SETIA ALAM 智慧牙科诊所</h1>
+        <h1 class="profile-bio">Dr Ryan Foong - Invisalign | Damon Braces | Veneers | Implants</h1>
         
         <!-- 3. Your Links -->
         <div class="links-container">
             <a href="https://yourwebsite.com/book" class="link-btn" target="_blank" rel="noopener noreferrer">
-                Book an Appointment
+                <i class="fa-solid fa-tag link-icon"></i>
+                Latest Promo!
             </a>
-            <a href="https://yourwebsite.com/services" class="link-btn" target="_blank" rel="noopener noreferrer">
-                Our Services
+            <a href="https://wa.me/60106559952" class="link-btn" target="_blank" rel="noopener noreferrer" style="font-size: 16px;">
+                <i class="fa-regular fa-clock link-icon"></i>
+                Monday OFF | Tuesday - Friday: 10am - 7pm <br>
+                Saturday: 9am-5pm | Sunday: 11am-5pm
             </a>
-            <a href="https://yourwebsite.com/contact" class="link-btn" target="_blank" rel="noopener noreferrer">
-                Contact Us / Location
+            <a href="https://wa.me/60106559952" class="link-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp link-icon" style="color: #25D366;"></i>
+                WhatsApp Us!
             </a>
-            <a href="https://yourwebsite.com/promotions" class="link-btn" target="_blank" rel="noopener noreferrer">
-                New Patient Specials
+            <a href="https://waze.com/ul/hw281s7w4d" class="link-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-waze link-icon" style="color: #33ccff;"></i>
+                Waze
+            </a>
+            <a href="https://maps.app.goo.gl/pxaKrf1g5kg2wG156" class="link-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-map-location-dot link-icon" style="color: #EA4335;"></i>
+                Google Maps
+            </a>
+            <a href="https://r.grab.com/o/nQnmimeu" class="link-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-car link-icon" style="color: #00B14F;"></i>
+                Grab
+            </a>
+            <a href="https://g.page/r/CfAJpqkFzpvMEAE/review" class="link-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-star link-icon" style="color: #FFD43B;"></i>
+                Review & Rate ⭐⭐⭐⭐⭐
+            </a>
+            <a href="https://www.instagram.com/wisdomdentalsetiaalam" class="link-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram link-icon" style="color: #E1306C;"></i>
+                Instagram
+            </a>
+            <a href="https://www.facebook.com/wisdomdentalsetia" class="link-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-facebook link-icon" style="color: #1877F2;"></i>
+                Facebook
+            </a>
+            <a href="tel:+60356321234" class="link-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-phone link-icon"></i>
+                Contact Us!
             </a>
         </div>
-
     </div>
 
 </body>
