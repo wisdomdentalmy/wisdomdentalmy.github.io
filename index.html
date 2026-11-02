@@ -75,7 +75,7 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 20px; /* Space between buttons */
+            gap: 22px; /* Space between buttons */
         }
 
         .link-btn {
@@ -83,8 +83,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100%;
-            padding: 25px 45px; /* Slightly increased side padding so text doesn't hit the icon */
+            width: 100%; /* 60px padding on both sides keeps text centered and clears the absolute icon */
+            padding: 20px 60px; /* Slightly increased side padding so text doesn't hit the icon */
             background-color: var(--button-bg);
             color: var(--button-text);
             text-decoration: none;
@@ -95,6 +95,12 @@
             border-radius: 15px; /* Change to 30px for pill-shaped buttons */
             transition: all 0.2s ease-in-out;
             box-shadow: 0 2px 15px var(--button-shadow);
+			
+			/* Forces long text to wrap inside the button */
+			text-align: center;
+			line-height: 1.4;
+			word-wrap: break-word;
+			height: auto;
         }
 
         .link-btn:hover {
@@ -109,6 +115,17 @@
             font-size: 40px; /* Icon size */
             color: var(--button-text);
         }
+		
+		/* Mobile Responsiveness */
+		@media (max-width: 480px) {
+		.link-btn {
+        padding: 15px 50px; /* Recovers screen space on narrow phones */
+        font-size: 15px; /* Slightly smaller font to prevent aggressive wrapping */
+		}
+		.link-icon {
+        left: 15px; 
+        font-size: 20px;
+		}
 
         /* Social Icons Section */
         .social-container {
@@ -149,8 +166,10 @@
             </a>
             <a href="https://wa.me/60106559952" class="link-btn" target="_blank" rel="noopener noreferrer" style="font-size: 16px;">
                 <i class="fa-regular fa-clock link-icon"></i>
-                Monday OFF | Tuesday - Friday: 10am - 7pm <br>
-                Saturday: 9am-5pm | Sunday: 11am-5pm
+                Monday OFF<br>
+				Tuesday - Friday: 10am - 7pm <br>
+                Saturday: 9am-5pm<br>
+				Sunday: 11am-5pm
             </a>
             <a href="https://wa.me/60106559952" class="link-btn" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-whatsapp link-icon" style="color: #25D366;"></i>
